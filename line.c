@@ -28,16 +28,16 @@ int main()
 
     // printf("%d,%d,%d",head->data,head->next->data,head->next->next->data);
 
-    head = insertLine(head,2,100);
-    display(head);
-    head = delLine(head,100);
-    display(head);
-    printf("search some node\n");
-    int index = searchLine(head,3);
-    printf("%d\n",index);
-    printf("update some node\n");
-    head = updateLine(head,2,800);
-    display(head);
+   // head = insertLine(head,2,100);
+    //display(head);
+//    head = delLine(head,100);
+//    display(head);
+//    printf("search some node\n");
+//    int index = searchLine(head,3);
+//    printf("%d\n",index);
+//    printf("update some node\n");
+//    head = updateLine(head,2,800);
+//    display(head);
 
     return 0;
 }
@@ -64,6 +64,8 @@ line *initLine(line *head)
         link = link->next;
     }
 
+    //最后一个元素指向头结点【构成单向循环链表】
+    link->next = head;
     return head;
 
 }
@@ -121,6 +123,7 @@ line *delLine(line *head,int data)
             //前
             temp->piror->next=temp->next;//1|2|3|4|5 当前节点的上一个节点=当前的下一个结点
             temp->next->piror=temp->piror;//当前节点的下一个节点的前驱结点=当前结点的前驱结点
+            free(temp);
         }
         temp = temp->next;
     }
