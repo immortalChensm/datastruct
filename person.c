@@ -71,20 +71,20 @@ void findK(person *head)
     //从指定结点开始【不包括本结点】
     while(p->next!=p){
         //printf("%d\n",p->number);
-        int m=2;
-        for(int i=1;i<m;i++){
-            tail = p;//3
-            p  = p->next;//4
-        }
+//        int m=2;
+//        for(int i=1;i<m;i++){
+//            tail = p;//3
+//            p  = p->next;//4
+//        }
         //printf("%d\n",p->number);
 
         tail->next = p->next;//5
         printf("find k is %d\n",p->number);
-        free(p);
+        //free(p);
         p = tail->next;
     }
     //printf("%d\n",tail->number);
     //printf("%d\n",p->number);
-    printf("find k %d\n",p->number);
-    free(p);
+    //printf("find k %d\n",p->number);
+    //free(p);
 }

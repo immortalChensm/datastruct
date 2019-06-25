@@ -66,6 +66,7 @@ line *initLine(line *head)
 
     //最后一个元素指向头结点【构成单向循环链表】
     link->next = head;
+    head->piror = link;//头结点指向最后一个结点
     return head;
 
 }
@@ -73,7 +74,7 @@ line *initLine(line *head)
 void display(line *head)
 {
     line *temp = head;//1|2|3|4|5
-    while(temp){
+    while(temp->next!=head){
         if (temp->next==NULL){
             printf("%d\n",temp->data);
             break;
