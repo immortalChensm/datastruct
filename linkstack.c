@@ -37,6 +37,12 @@ void display(linkStack *link)
     }
 }
 
+/**
+ * 栈链结点入栈【压栈】
+ * @param link
+ * @param data
+ * @return
+ */
 linkStack *push(linkStack *link,int data)
 {
     linkStack *temp = (linkStack*)malloc(sizeof(linkStack));
@@ -46,6 +52,11 @@ linkStack *push(linkStack *link,int data)
     return link;
 }
 
+/**
+ * 栈链结点弹栈
+ * @param link
+ * @return
+ */
 linkStack *pop(linkStack *link)
 {
     if (link){
