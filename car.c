@@ -114,6 +114,9 @@ zanInode pop(zanInode *park,int *parktop,int carnumber,zanInode *location,int *l
         printf("no car in our station\n");
     }else{
 
+        /**
+         * 让路  将后面的车全挪到新的地方 栈
+         */
         while((*parktop)>i+1){
             (*parktop)--;//4 最后一个元素
             location[(*locationtop)] = park[(*parktop)];
@@ -126,6 +129,8 @@ zanInode pop(zanInode *park,int *parktop,int carnumber,zanInode *location,int *l
         }
         (*parktop)--;//parktop=2
         car = park[(*parktop)];//2
+
+        //车子出来后，将后面挪过的又放进来
         while((*locationtop)>0){
             (*locationtop)--;
             park[(*parktop)] = location[(*locationtop)];//0|1|3|4
