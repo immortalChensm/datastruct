@@ -22,31 +22,47 @@ typedef int Status;
  Status removeStr(char *str,int location,char *data);
  Status strPos(char *str,char data);
  Status strCount(char *str,char data);
+ typedef struct test
+ {
+     void *name;
+     void (*say)(struct test *t,struct test *tt);
+ }test;
+
  char *strReverse(char *str);
 
+ void say(test *t,test *s);
 int main()
 {
-    char str[100] = "hello,nihao";
-    str[0]= 'k';
+    test tb;
+    tb.name = (char*)malloc(10*sizeof(char));
+    strcpy(tb.name,"hello");
+    tb.say = say;
 
-    printf("%s\n",str);
-    printf("%c\n",*str);
-    insertStr(str,3,'m');
-    printf("%s\n",str);
-    char data;
-    removeStr(str,3,&data);
-    printf("%c\n",data);
-    printf("%s\n",str);
+    tb.say(&tb,&tb);
 
-    printf("***************\n");
-    int pos = strPos(str,'o');
-    printf("%d\n",pos);
-    printf("******************\n");
-    int count = strCount(str,'o');
-    printf("%o=d\n",count);
-    printf("revese test \n");
-    char *temp = strReverse(str);
-    printf("temp=%s\n",temp);
+
+
+//    char str[100] = "hello,nihao";
+//    str[0]= 'k';
+//
+//    printf("%s\n",str);
+//    printf("%c\n",*str);
+//    insertStr(str,3,'m');
+//    printf("%s\n",str);
+//    char data;
+//    removeStr(str,3,&data);
+//    printf("%c\n",data);
+//    printf("%s\n",str);
+//
+//    printf("***************\n");
+//    int pos = strPos(str,'o');
+//    printf("%d\n",pos);
+//    printf("******************\n");
+//    int count = strCount(str,'o');
+//    printf("%o=d\n",count);
+//    printf("revese test \n");
+//    char *temp = strReverse(str);
+//    printf("temp=%s\n",temp);
     return 0;
 }
 
@@ -106,4 +122,10 @@ char *strReverse(char *str)
         temp[j] = str[i];
     }
     return temp;
+}
+
+void say(test *t,test *s)
+{
+    printf("%s\n",t->name);
+    printf("%s\n",s->name);
 }
