@@ -15,6 +15,9 @@ int main()
     char *b = "abd";
     int num = match(a,b);
     printf("num=%d\n",num);
+
+    int *p = 12;
+    printf("%d\n",p);
     return 0;
 }
 
