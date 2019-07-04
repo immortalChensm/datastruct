@@ -24,6 +24,13 @@ void enQueue(Bitree *a,Bitree node);
 Bitree deQueue(Bitree *a);
 //层序遍历  使用队列实现
 void displayTree(Bitree tree);
+
+typedef enum tag{
+    ok=1,
+    error
+}tag;
+
+tag test;
 int main()
 {
     Bitree tree = initTree();
@@ -36,11 +43,16 @@ int main()
 //    inOrderTraverse(tree);
 //
 //    printf("***************\n");
-//    lastOrderTraverse(tree);
+    lastOrderTraverse(tree);
 
-
+    printf("***************\n");
     displayTree(tree);
 
+    test = error;
+    printf("test=%d\n",test);
+    printf("test=%d\n", sizeof(test));
+    printf("test=%d\n", sizeof(tag));
+    printf("test=%d\n", sizeof(int));
     return 1;
 }
 
