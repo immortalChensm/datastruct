@@ -15,16 +15,56 @@ typedef struct tree{
 tree *initTree();
 void display(Bitree tree);
 void preOrderTraverse(Bitree tree);
+void inOrderTraverse(Bitree tree);
+void lastOrderTraverse(Bitree tree);
+
+int front=0,near=0;
+
+void enQueue(Bitree *a,Bitree node);
+Bitree deQueue(Bitree *a);
+//层序遍历  使用队列实现
+void displayTree(Bitree tree);
 int main()
 {
     Bitree tree = initTree();
-    printf("%d\n",tree->data);
+//    printf("%d\n",tree->data);
+//
+//    printf("***************\n");
+//    preOrderTraverse(tree);
+//
+//    printf("***************\n");
+//    inOrderTraverse(tree);
+//
+//    printf("***************\n");
+//    lastOrderTraverse(tree);
 
-    printf("***************\n");
-    preOrderTraverse(tree);
+
+    displayTree(tree);
+
     return 1;
 }
 
+/**
+ * 层序遍历二叉链
+ * @param tree
+ */
+void displayTree(Bitree tree)
+{
+    Bitree a[20];
+
+    Bitree p=NULL;
+    enQueue(a,tree);
+    while (front<near){
+        p = deQueue(a);
+        display(p);
+        if (p->ltree!=NULL){
+            enQueue(a,p->ltree);
+        }
+        if (p->rtree!=NULL){
+            enQueue(a,p->rtree);
+        }
+    }
+}
 tree *initTree()
 {
     Bitree tree = (Bitree)malloc(sizeof(tree));
@@ -79,4 +119,32 @@ void preOrderTraverse(Bitree tree)
         preOrderTraverse(tree->ltree);
         preOrderTraverse(tree->rtree);
     }
+}
+
+void inOrderTraverse(Bitree tree)
+{
+    if (tree){
+        inOrderTraverse(tree->ltree);
+        display(tree);
+        inOrderTraverse(tree->rtree);
+    }
+}
+
+void lastOrderTraverse(Bitree tree)
+{
+    if (tree){
+        lastOrderTraverse(tree->ltree);
+        lastOrderTraverse(tree->rtree);
+        display(tree);
+    }
+}
+
+void enQueue(Bitree *a,Bitree node)
+{
+    a[near++]=node;
+}
+
+Bitree deQueue(Bitree *a)
+{
+    return a[front++];
 }
