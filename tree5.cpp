@@ -32,8 +32,7 @@ H 6
 K 6
  * @return
  */
-int main()
-{
+int main(){
     PTree tree;
     for(int i=0;i<MAX_SIZE;i++){
         tree.node[i].data = ' ';
