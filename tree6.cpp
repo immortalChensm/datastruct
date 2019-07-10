@@ -1,7 +1,10 @@
 //
 // Created by 1655664358@qq.com on 2019/7/6.
 //
-
+/**
+ *
+ *
+ */
 #include <stdlib.h>
 #include <stdio.h>
 #define MAX_SIZE 20
@@ -50,14 +53,21 @@ int main()
         tree.node[i].firstChild = NULL;
     }
 
-    tree = initTree(tree);
-    printf("%c\n",tree.node[0].data);
-    printf("**************************");
+   // tree = initTree(tree);
+    //printf("%c\n",tree.node[0].data);
+    //printf("**************************");
     //displayNode(tree);
-    FindKids(tree,'F');
+    //FindKids(tree,'F');
+    char *path = getenv("PATH");
+    printf("path=%s\n",path);
     return 0;
 }
 
+/**
+ * 普通树初始化
+ * @param tree
+ * @return
+ */
 CTree initTree(CTree tree)
 {
     printf("please type parent number \n");
@@ -98,6 +108,11 @@ CTree initTree(CTree tree)
     return tree;
 }
 
+/**
+ * 查找树
+ * @param tree
+ * @param a
+ */
 void FindKids(CTree tree,char a)
 {
     int hasKids=0;
@@ -116,6 +131,10 @@ void FindKids(CTree tree,char a)
     }
 }
 
+/**
+ * 显示树
+ * @param tree
+ */
 void displayNode(CTree tree)
 {
     for(int i=0;i<tree.n;i++){
