@@ -14,10 +14,17 @@ typedef struct {
 
 }HTNode,*HuffmanTree;
 
+typedef struct {
+    int data;
+    int parent;
+}Test,*T;
+
 HuffmanTree createHuffmanTree(HuffmanTree tree,int *w,int n);
 void Select(HuffmanTree tree,int end,int *s1,int *s2);
 void displayHuffmanTree(HuffmanTree tree);
 
+Test *findMinValue(Test *test,int *weight,int location);
+void testMin();
 int main()
 {
     HuffmanTree tree=NULL;
@@ -27,10 +34,82 @@ int main()
     printf("*****************\n");
 //    printf("%d\n",tree[1].weight);
     displayHuffmanTree(tree);
+    printf("*****************\n");
+    testMin();
     return 0;
 
 }
 
+void testMin()
+{
+    T test = (T)malloc(10* sizeof(Test));
+    int weight[]={8,4,7,3,2};
+    for(int i=1;i<=5;i++){
+        (test+i)->parent=0;
+        (test+i)->data=*(weight+i-1);
+    }
+    for(int i=6;i<=10;i++){
+        (test+i)->parent=0;
+        (test+i)->data=0;
+    }
+    for(int i=1;i<=5;i++){
+        test = findMinValue(test,weight,i);
+    }
+}
+Test *findMinValue(Test *test,int *weight,int location)
+{
+
+
+
+    //从数组中查找2个最小的结点出来并显示
+    int min1,min2;
+    int s1,s2;
+    int k=1;
+    while(test[k].parent!=0&&k<=5){
+        k++;
+    }
+
+    min1 = test[k].data;
+    s1=k;
+    k++;
+
+    while (test[k].parent!=0&&k<=5){
+        k++;
+    }
+
+    if (test[k].data<min1){
+        min2=min1;
+        s2=s1;
+        min1=test[k].data;
+        s1=k;
+    }else{
+        min2=test[k].data;
+        s2=k;
+    }
+
+
+        for(int j=k+1;j<=5;j++){
+            if (test[j].parent!=0){
+                continue;
+            }
+            if (test[j].data<min1){
+                min2=min1;
+                s2=s1;
+                min1=test[j].data;
+                s1=j;
+            }else if(test[j].data>=min1&&test[j].data<min2){
+                min2=test[j].data;
+                s2=k;
+            }
+
+        }
+        printf("now min1 value is %d,min2 is %d\n",min1,min2);
+        printf("s1=%d,s2=%d,location=%d\n",s1,s2,location);
+        test[s1].parent=location;
+        test[s2].parent=location;
+
+    return test;
+}
 void displayHuffmanTree(HuffmanTree tree)
 {
     for(int i=1;i<10;i++){
