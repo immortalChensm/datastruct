@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 /**
  * 哈夫曼树算法实现
  */
@@ -19,27 +20,54 @@ typedef struct {
     int parent;
 }Test,*T;
 
+typedef char **HuffCode;
+
 HuffmanTree createHuffmanTree(HuffmanTree tree,int *w,int n);
 void Select(HuffmanTree tree,int end,int *s1,int *s2);
 void displayHuffmanTree(HuffmanTree tree);
 
 Test *findMinValue(Test *test,int *weight,int location);
+void HuffmanCodeing(HuffmanTree tree,HuffCode *table,int n);
+void displayHuffmanCode(HuffCode *table,int *weight,int n);
+
+void test();
 void testMin();
 int main()
 {
     HuffmanTree tree=NULL;
     int w[5] = {2,8,7,6,5};
     int n=5;
+    HuffCode table;
     tree = createHuffmanTree(tree,w,n);
-    printf("*****************\n");
-//    printf("%d\n",tree[1].weight);
-    displayHuffmanTree(tree);
-    printf("*****************\n");
-    testMin();
+
+   // HuffmanCodeing(tree,&table,n);
+   // displayHuffmanCode(&table,w,n);
+//    printf("*****************\n");
+////    printf("%d\n",tree[1].weight);
+//    displayHuffmanTree(tree);
+//    printf("*****************\n");
+//    testMin();
+
+//    displayHuffmanTree(tree);
+//
+//    printf("******************************\n");
+//
+//    char **test = (char**)malloc(10*sizeof(char));
+//    strcpy(&(*test)[0],"chinese");
+//    printf("%s\n",&(*test)[0]);
+
+    test();
     return 0;
 
 }
 
+void test()
+{
+    char **name = (char**)malloc(10* sizeof(char***************));
+    name[0] = (char*)malloc(10* sizeof(char));
+    strcpy(name[0],"china");
+    printf("%s\n",name[0]);
+}
 void testMin()
 {
     T test = (T)malloc(10* sizeof(Test));
@@ -215,5 +243,49 @@ void Select(HuffmanTree tree,int end,int *s1,int *s2)
             min2 = tree[j].weight;
             *s2=j;
         }
+    }
+}
+
+void HuffmanCodeing(HuffmanTree tree,HuffCode *table,int n)
+{
+    *table = (HuffCode)malloc((n+1)* sizeof(char*));
+
+    char *cd = (char*)malloc(n* sizeof(char));
+    cd[n-1]='\0';
+
+
+    for(int i=1;i<=n;i++){
+
+        int start=n-1;
+        int c = i;
+        int j = tree[i].parent;
+        while (j!=0){
+            if (tree[j].left==c){
+                cd[--start]='0';
+            }else{
+                cd[--start]='1';
+            }
+
+            c = j;
+            j = tree[j].parent;
+        }
+//        printf("%s\n",&cd[start]);
+        //printf("%s\n",cd+start);
+        (*table)[i]=(char*)malloc((n)*sizeof(char));
+
+        strcpy((*table)[i],&cd[start]);
+            //strcpy((*table)[i],cd+start);
+        //printf("c");
+    }
+
+    free(cd);
+
+}
+
+void displayHuffmanCode(HuffCode *table,int *weight,int n)
+{
+    printf("print huffman code\n");
+    for(int i=1;i<=n;i++){
+        printf("w[%d]=%d,code=%s\n",i,weight[i-1],(*table)[i]);
     }
 }
