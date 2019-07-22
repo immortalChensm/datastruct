@@ -40,8 +40,8 @@ int main()
 //    HuffCode table;
 //    tree = createHuffmanTree(tree,w,n);
 
-   // HuffmanCodeing(tree,&table,n);
-   // displayHuffmanCode(&table,w,n);
+    // HuffmanCodeing(tree,&table,n);
+    // displayHuffmanCode(&table,w,n);
 //    printf("*****************\n");
 ////    printf("%d\n",tree[1].weight);
 //    displayHuffmanTree(tree);
@@ -56,22 +56,30 @@ int main()
 //    strcpy(&(*test)[0],"chinese");
 //    printf("%s\n",&(*test)[0]);
 
-    test();
+    char **nameG = (char**)malloc(10* sizeof(char***************));
+    /**
+     * name的内容是个10个存储单元的地址，记作A地址 A=[10]
+     * *name的内容是【取A地址】的内容，A地址上的内容还是地址，记作B地址 B[10]
+     * **name的内容是[取B地址上的内容】
+     */
+    nameG[0] = (char*)malloc(10* sizeof(char));
+    strcpy(nameG[0],"china");
+    printf("%s\n",nameG[0]);
     return 0;
 
 }
 
 void test()
 {
-    char **name = (char**)malloc(10* sizeof(char***************));
+    char **nameG = (char**)malloc(10* sizeof(char***************));
     /**
      * name的内容是个10个存储单元的地址，记作A地址 A=[10]
      * *name的内容是【取A地址】的内容，A地址上的内容还是地址，记作B地址 B[10]
      * **name的内容是[取B地址上的内容】
      */
 //    name[0] = (char*)malloc(10* sizeof(char));
-    strcpy(name[0],"china");
-    printf("%s\n",name[0]);
+    strcpy(nameG[0],"china");
+    printf("%s\n",nameG[0]);
 }
 void testMin()
 {
@@ -121,25 +129,25 @@ Test *findMinValue(Test *test,int *weight,int location)
     }
 
 
-        for(int j=k+1;j<=5;j++){
-            if (test[j].parent!=0){
-                continue;
-            }
-            if (test[j].data<min1){
-                min2=min1;
-                s2=s1;
-                min1=test[j].data;
-                s1=j;
-            }else if(test[j].data>=min1&&test[j].data<min2){
-                min2=test[j].data;
-                s2=k;
-            }
-
+    for(int j=k+1;j<=5;j++){
+        if (test[j].parent!=0){
+            continue;
         }
-        printf("now min1 value is %d,min2 is %d\n",min1,min2);
-        printf("s1=%d,s2=%d,location=%d\n",s1,s2,location);
-        test[s1].parent=location;
-        test[s2].parent=location;
+        if (test[j].data<min1){
+            min2=min1;
+            s2=s1;
+            min1=test[j].data;
+            s1=j;
+        }else if(test[j].data>=min1&&test[j].data<min2){
+            min2=test[j].data;
+            s2=k;
+        }
+
+    }
+    printf("now min1 value is %d,min2 is %d\n",min1,min2);
+    printf("s1=%d,s2=%d,location=%d\n",s1,s2,location);
+    test[s1].parent=location;
+    test[s2].parent=location;
 
     return test;
 }
@@ -279,7 +287,7 @@ void HuffmanCodeing(HuffmanTree tree,HuffCode *table,int n)
         (*table)[i]=(char*)malloc((n)*sizeof(char));
 
         strcpy((*table)[i],&cd[start]);
-            //strcpy((*table)[i],cd+start);
+        //strcpy((*table)[i],cd+start);
         //printf("c");
     }
 
