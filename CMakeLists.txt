@@ -1,3 +1,3 @@
 cmake_minimum_required(VERSION 2.8)
 project(line)
-add_executable(line recall_test.c)
+add_executable(line graph.c)
