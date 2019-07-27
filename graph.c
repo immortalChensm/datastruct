@@ -27,7 +27,7 @@ typedef struct {
     int vexnum,arcnum;//顶点数量和弧或边数量
     GraphKind kind;//图各类  图和网  有向图，无向图，有向网，无向网
 }MGraph;
-
+void PrintGraph(MGraph G);
 int LocateVer(MGraph *G,VertexType v)
 {
     int i=0;
@@ -48,7 +48,7 @@ int LocateVer(MGraph *G,VertexType v)
  */
 void CreateDG(MGraph *G)
 {
-    printf("input vexnum and arcnum:\n");
+    printf("DG:input vexnum and arcnum:\n");
     scanf("%d %d",&(G->vexnum),&(G->arcnum));
     for(int i=0;i<G->vexnum;i++){
         printf("input vertex data:\n");
@@ -76,6 +76,112 @@ void CreateDG(MGraph *G)
     }
 }
 
+/**
+ * 无向图  顶点之间是双向关系
+ * @param G
+ */
+void createDN(MGraph *G)
+{
+    printf("DN:input vexnum and arcnum:\n");
+    scanf("%d %d",&(G->vexnum),&(G->arcnum));
+    for(int i=0;i<G->vexnum;i++){
+        printf("input vertex data:\n");
+        scanf("%d",&(G->vers[i]));
+    }
+
+    for(int i=0;i<G->vexnum;i++){
+        for(int j=0;j<G->vexnum;j++){
+            G->arcs[i][j].adj=0;
+            G->arcs[i][j].info=NULL;
+        }
+    }
+
+
+    for(int i=0;i<G->arcnum;i++){
+        int v1,v2;
+        printf("input vertex x data,vertex y data:\n");
+        scanf("%d %d",&v1,&v2);
+        int n = LocateVer(G,v1);
+        int m = LocateVer(G,v2);
+        if(n==-1||m==-1){
+            printf("no this vetext\n");
+            return ;
+        }
+        G->arcs[n][m].adj = 1;
+        G->arcs[m][n].adj = 1;
+    }
+}
+
+/**
+ * 有向网
+ * @param G
+ */
+void createUDG(MGraph *G)
+{
+    printf("UDG:input vexnum and arcnum:\n");
+    scanf("%d %d",&(G->vexnum),&(G->arcnum));
+    for(int i=0;i<G->vexnum;i++){
+        printf("input vertex data:\n");
+        scanf("%d",&(G->vers[i]));
+    }
+
+    for(int i=0;i<G->vexnum;i++){
+        for(int j=0;j<G->vexnum;j++){
+            G->arcs[i][j].adj=0;
+            G->arcs[i][j].info=NULL;
+        }
+    }
+
+
+    for(int i=0;i<G->arcnum;i++){
+        int v1,v2,w;
+        printf("input vertex x data,vertex y data,w data:\n");
+        scanf("%d %d %d",&v1,&v2,&w);
+        int n = LocateVer(G,v1);
+        int m = LocateVer(G,v2);
+        if(n==-1||m==-1){
+            printf("no this vetext\n");
+            return ;
+        }
+        G->arcs[n][m].adj = w;
+        printf("%d %d %d,%d\n",n,m,G->arcs[n][m].adj,w);
+    }
+}
+/**
+ * 无向网
+ * @param G
+ */
+void createUDN(MGraph *G)
+{
+    printf("UDN:input vexnum and arcnum:\n");
+    scanf("%d %d",&(G->vexnum),&(G->arcnum));
+    for(int i=0;i<G->vexnum;i++){
+        printf("input vertex data:\n");
+        scanf("%d",&(G->vers[i]));
+    }
+
+    for(int i=0;i<G->vexnum;i++){
+        for(int j=0;j<G->vexnum;j++){
+            G->arcs[i][j].adj=0;
+            G->arcs[i][j].info=NULL;
+        }
+    }
+
+
+    for(int i=0;i<G->arcnum;i++){
+        int v1,v2,w;
+        printf("input vertex x data,vertex y data:\n");
+        scanf("%d %d %d",&v1,&v2,&w);
+        int n = LocateVer(G,v1);
+        int m = LocateVer(G,v2);
+        if(n==-1||m==-1){
+            printf("no this vetext\n");
+            return ;
+        }
+        G->arcs[n][m].adj = w;
+        G->arcs[m][n].adj = w;
+    }
+}
 void CreateGraph(MGraph *G){
 
     printf("input graph kind:\n");
@@ -85,10 +191,13 @@ void CreateGraph(MGraph *G){
             CreateDG(G);
             break;
         case DN:
+            createDN(G);
             break;
         case UDG:
+            createUDG(G);
             break;
         case UDN:
+            createUDN(G);
             break;
     }
 }
@@ -97,7 +206,7 @@ void PrintGraph(MGraph G)
 {
     for(int i=0;i<G.vexnum;i++){
         for(int j=0;j<G.vexnum;j++){
-            printf("%d",G.arcs[i][j].adj);
+            printf("%d",(G.arcs[i][j].adj));
         }
         printf("\n");
     }
