@@ -78,7 +78,9 @@ int search(int key,int a[])
     }
 
     starValue = newIndex[i].start;
+    printf("startvalue=%d\n",starValue);
     while (starValue<=starValue+5&&a[starValue]!=key){
+        printf("startvalue=%d,startvalue+5=%d\n",starValue,starValue+5);
         starValue++;
     }
 
