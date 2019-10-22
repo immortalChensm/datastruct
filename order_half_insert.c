@@ -6,6 +6,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <signal.h>
 void print(int a[],int n,int i)
 {
     printf("%d:",i);
@@ -42,6 +43,11 @@ void insertOrder(int a[],int n)
 int main()
 {
     int a[8] = {3,1,7,5,2,4,9,6};
-    insertOrder(a,8);
-    return 0;
+    //insertOrder(a,8);
+    //return 0;
+    int b=2;
+    print(&b,3,1);
+
+    scanf("%d",&b);
+    printf("%d",b/3.4);
 }
