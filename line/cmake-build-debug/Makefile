@@ -122,32 +122,32 @@ line/fast:
 	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/build
 .PHONY : line/fast
 
-stack_link.obj: stack_link.c.obj
+tree2.obj: tree2.c.obj
 
-.PHONY : stack_link.obj
+.PHONY : tree2.obj
 
 # target to build an object file
-stack_link.c.obj:
-	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/stack_link.c.obj
-.PHONY : stack_link.c.obj
+tree2.c.obj:
+	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/tree2.c.obj
+.PHONY : tree2.c.obj
 
-stack_link.i: stack_link.c.i
+tree2.i: tree2.c.i
 
-.PHONY : stack_link.i
+.PHONY : tree2.i
 
 # target to preprocess a source file
-stack_link.c.i:
-	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/stack_link.c.i
-.PHONY : stack_link.c.i
+tree2.c.i:
+	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/tree2.c.i
+.PHONY : tree2.c.i
 
-stack_link.s: stack_link.c.s
+tree2.s: tree2.c.s
 
-.PHONY : stack_link.s
+.PHONY : tree2.s
 
 # target to generate assembly for a file
-stack_link.c.s:
-	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/stack_link.c.s
-.PHONY : stack_link.c.s
+tree2.c.s:
+	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/tree2.c.s
+.PHONY : tree2.c.s
 
 # Help Target
 help:
@@ -158,9 +158,9 @@ help:
 	@echo ... line
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... stack_link.obj
-	@echo ... stack_link.i
-	@echo ... stack_link.s
+	@echo ... tree2.obj
+	@echo ... tree2.i
+	@echo ... tree2.s
 .PHONY : help
 
 
