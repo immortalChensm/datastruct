@@ -122,32 +122,32 @@ line/fast:
 	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/build
 .PHONY : line/fast
 
-tree2.obj: tree2.c.obj
+tree4.obj: tree4.c.obj
 
-.PHONY : tree2.obj
+.PHONY : tree4.obj
 
 # target to build an object file
-tree2.c.obj:
-	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/tree2.c.obj
-.PHONY : tree2.c.obj
+tree4.c.obj:
+	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/tree4.c.obj
+.PHONY : tree4.c.obj
 
-tree2.i: tree2.c.i
+tree4.i: tree4.c.i
 
-.PHONY : tree2.i
+.PHONY : tree4.i
 
 # target to preprocess a source file
-tree2.c.i:
-	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/tree2.c.i
-.PHONY : tree2.c.i
+tree4.c.i:
+	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/tree4.c.i
+.PHONY : tree4.c.i
 
-tree2.s: tree2.c.s
+tree4.s: tree4.c.s
 
-.PHONY : tree2.s
+.PHONY : tree4.s
 
 # target to generate assembly for a file
-tree2.c.s:
-	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/tree2.c.s
-.PHONY : tree2.c.s
+tree4.c.s:
+	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/tree4.c.s
+.PHONY : tree4.c.s
 
 # Help Target
 help:
@@ -158,9 +158,9 @@ help:
 	@echo ... line
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... tree2.obj
-	@echo ... tree2.i
-	@echo ... tree2.s
+	@echo ... tree4.obj
+	@echo ... tree4.i
+	@echo ... tree4.s
 .PHONY : help
 
 

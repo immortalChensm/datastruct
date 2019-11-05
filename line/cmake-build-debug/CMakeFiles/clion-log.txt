@@ -5,7 +5,14 @@ CMake Warning (dev) at CMakeLists.txt:4:
   Argument not separated from preceding token by whitespace.
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
+CMake Warning (dev) at CMakeLists.txt:7:
+  Syntax Warning in cmake code at column 33
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
 -- bitree testE:/c/datastruct/line
+-- GLOB FILES IS :line_double_link.cline_link.cline_order.cqueue_link.cqueue_order.cqueue_order1.cstack_link.cstack_order.ctree1.ctree2.ctree3.ctree4.c
 -- Configuring done
 -- Generating done
 -- Build files have been written to: E:/c/datastruct/line/cmake-build-debug

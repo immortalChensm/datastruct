@@ -56,27 +56,27 @@ include CMakeFiles/line.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/line.dir/flags.make
 
-CMakeFiles/line.dir/tree2.c.obj: CMakeFiles/line.dir/flags.make
-CMakeFiles/line.dir/tree2.c.obj: ../tree2.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\c\datastruct\line\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/line.dir/tree2.c.obj"
-	C:\TDM-GCC-64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\line.dir\tree2.c.obj   -c E:\c\datastruct\line\tree2.c
+CMakeFiles/line.dir/tree4.c.obj: CMakeFiles/line.dir/flags.make
+CMakeFiles/line.dir/tree4.c.obj: ../tree4.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\c\datastruct\line\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/line.dir/tree4.c.obj"
+	C:\TDM-GCC-64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\line.dir\tree4.c.obj   -c E:\c\datastruct\line\tree4.c
 
-CMakeFiles/line.dir/tree2.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/line.dir/tree2.c.i"
-	C:\TDM-GCC-64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\c\datastruct\line\tree2.c > CMakeFiles\line.dir\tree2.c.i
+CMakeFiles/line.dir/tree4.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/line.dir/tree4.c.i"
+	C:\TDM-GCC-64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\c\datastruct\line\tree4.c > CMakeFiles\line.dir\tree4.c.i
 
-CMakeFiles/line.dir/tree2.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/line.dir/tree2.c.s"
-	C:\TDM-GCC-64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\c\datastruct\line\tree2.c -o CMakeFiles\line.dir\tree2.c.s
+CMakeFiles/line.dir/tree4.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/line.dir/tree4.c.s"
+	C:\TDM-GCC-64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\c\datastruct\line\tree4.c -o CMakeFiles\line.dir\tree4.c.s
 
 # Object files for target line
 line_OBJECTS = \
-"CMakeFiles/line.dir/tree2.c.obj"
+"CMakeFiles/line.dir/tree4.c.obj"
 
 # External object files for target line
 line_EXTERNAL_OBJECTS =
 
-line.exe: CMakeFiles/line.dir/tree2.c.obj
+line.exe: CMakeFiles/line.dir/tree4.c.obj
 line.exe: CMakeFiles/line.dir/build.make
 line.exe: CMakeFiles/line.dir/linklibs.rsp
 line.exe: CMakeFiles/line.dir/objects1.rsp
