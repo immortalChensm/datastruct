@@ -122,32 +122,32 @@ line/fast:
 	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/build
 .PHONY : line/fast
 
-tree4.obj: tree4.c.obj
+search_order.obj: search_order.c.obj
 
-.PHONY : tree4.obj
+.PHONY : search_order.obj
 
 # target to build an object file
-tree4.c.obj:
-	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/tree4.c.obj
-.PHONY : tree4.c.obj
+search_order.c.obj:
+	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/search_order.c.obj
+.PHONY : search_order.c.obj
 
-tree4.i: tree4.c.i
+search_order.i: search_order.c.i
 
-.PHONY : tree4.i
+.PHONY : search_order.i
 
 # target to preprocess a source file
-tree4.c.i:
-	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/tree4.c.i
-.PHONY : tree4.c.i
+search_order.c.i:
+	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/search_order.c.i
+.PHONY : search_order.c.i
 
-tree4.s: tree4.c.s
+search_order.s: search_order.c.s
 
-.PHONY : tree4.s
+.PHONY : search_order.s
 
 # target to generate assembly for a file
-tree4.c.s:
-	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/tree4.c.s
-.PHONY : tree4.c.s
+search_order.c.s:
+	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/search_order.c.s
+.PHONY : search_order.c.s
 
 # Help Target
 help:
@@ -158,9 +158,9 @@ help:
 	@echo ... line
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... tree4.obj
-	@echo ... tree4.i
-	@echo ... tree4.s
+	@echo ... search_order.obj
+	@echo ... search_order.i
+	@echo ... search_order.s
 .PHONY : help
 
 
