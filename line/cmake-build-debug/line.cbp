@@ -82,7 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="E:/c/datastruct/line/search_order.c">
+		<Unit filename="E:/c/datastruct/line/search_half.c">
 			<Option target="line"/>
 		</Unit>
 		<Unit filename="E:/c/datastruct/line/CMakeLists.txt">

@@ -122,32 +122,32 @@ line/fast:
 	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/build
 .PHONY : line/fast
 
-search_order.obj: search_order.c.obj
+search_half.obj: search_half.c.obj
 
-.PHONY : search_order.obj
+.PHONY : search_half.obj
 
 # target to build an object file
-search_order.c.obj:
-	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/search_order.c.obj
-.PHONY : search_order.c.obj
+search_half.c.obj:
+	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/search_half.c.obj
+.PHONY : search_half.c.obj
 
-search_order.i: search_order.c.i
+search_half.i: search_half.c.i
 
-.PHONY : search_order.i
+.PHONY : search_half.i
 
 # target to preprocess a source file
-search_order.c.i:
-	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/search_order.c.i
-.PHONY : search_order.c.i
+search_half.c.i:
+	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/search_half.c.i
+.PHONY : search_half.c.i
 
-search_order.s: search_order.c.s
+search_half.s: search_half.c.s
 
-.PHONY : search_order.s
+.PHONY : search_half.s
 
 # target to generate assembly for a file
-search_order.c.s:
-	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/search_order.c.s
-.PHONY : search_order.c.s
+search_half.c.s:
+	$(MAKE) -f CMakeFiles\line.dir\build.make CMakeFiles/line.dir/search_half.c.s
+.PHONY : search_half.c.s
 
 # Help Target
 help:
@@ -158,9 +158,9 @@ help:
 	@echo ... line
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... search_order.obj
-	@echo ... search_order.i
-	@echo ... search_order.s
+	@echo ... search_half.obj
+	@echo ... search_half.i
+	@echo ... search_half.s
 .PHONY : help
 
 
